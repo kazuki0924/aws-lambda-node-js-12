@@ -1,0 +1,22 @@
+{
+  "name": "aws-lambda-node-js-12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazuki0924/aws-lambda-node-js-12.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kazuki0924/aws-lambda-node-js-12/issues"
+  },
+  "homepage": "https://github.com/kazuki0924/aws-lambda-node-js-12#readme",
+  "dependencies": {
+    "moment": "^2.25.3"
+  }
+}

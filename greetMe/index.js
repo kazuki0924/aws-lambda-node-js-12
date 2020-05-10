@@ -1,28 +1,23 @@
-let messages = [
-	'Hello World!',
-	'Hello Serverless!',
-	"It's a great day today!",
-	"Yay, I'm learning something new today!",
-	'On cloud nine!',
-	'Over the moon!',
-	'Shooting for the stars!',
-	'On top of the World!',
-	'World at my feet!',
-	'Doing everything I love!'
-];
+import moment from 'moment';
+const greeting = {
+	en: 'Hello',
+	fr: 'Bonjour',
+	de: 'Hallo'
+};
 
 exports.handler = async (event) => {
-	// TODO implement
-	let message = messages[Math.floor(Math.random() * 10)];
-	console.error('An error occurred');
-	console.log('A log message ');
-	console.info('An informative message');
-	console.warn('Warning message');
+	let name = event.pathParameters.name;
+	let { lang, ...info } = event.queryStringParameters;
 
-	const response = {
-		statusCode: 200,
-		body: JSON.stringify(message)
+	let message = `${greeting[lang] ? greeting[lang] : greeting['en']} ${name}`;
+	let response = {
+		message: message,
+		info: info,
+		timestamp: moment().unix()
 	};
-	throw new Error('This is a random error!');
-	return response;
+
+	return {
+		statusCode: 200,
+		body: JSON.stringify(response)
+	};
 };
