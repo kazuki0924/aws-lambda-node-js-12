@@ -1,4 +1,4 @@
-import moment from 'moment';
+let moment = require('moment');
 const greeting = {
 	en: 'Hello',
 	fr: 'Bonjour',
